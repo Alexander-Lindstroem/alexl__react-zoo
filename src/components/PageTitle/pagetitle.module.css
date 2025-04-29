@@ -1,0 +1,19 @@
+.pageTitle {
+    margin: 0;
+    text-align: center;
+    font-size: 2.4rem;
+    letter-spacing: .1rem;
+    padding: 0 16px;
+    text-shadow: 
+        2px 2px white,
+        -2px -2px white,
+        2px -2px white,
+        -2px 2px white;
+}
+
+@media screen and (min-width: 768px) {
+    .pageTitle {
+        text-align: left;
+        font-size: 4rem;
+    }
+}

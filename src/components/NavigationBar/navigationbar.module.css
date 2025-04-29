@@ -1,0 +1,41 @@
+.navBar {
+    display: flex;
+    flex-direction: column;
+}
+
+.link {
+    color: white;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px black dotted;
+    text-shadow: 1px 1px 2px black;
+}
+
+.link:nth-of-type(odd) {
+    background-color: rgb(0, 40, 0);
+}
+
+@media screen and (min-width: 768px) {
+    .navBar {
+        flex-direction: row;
+        gap: 16px;
+    }
+
+    .link {
+        padding: 6px 16px;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        border: none;
+        font-size: 2rem;
+        text-shadow: 2px 2px 2px black;
+    }
+    .link:nth-of-type(odd) {
+        background-color: inherit;
+    }
+    .link:hover {
+        background-color: rgb(0, 40, 0);
+    }
+}
