@@ -1,16 +1,20 @@
 import styles from './sidebar.module.css'
 import { allAnimals, mammals, reptiles, birds } from '../../utils/data'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 
 const Sidebar = ({sidebarPageReference}) => {
-    let sidebarObjects
-    sidebarObjects = sidebarPageReference.toLowerCase() === "home" ?  allAnimals : {mammals, reptiles, birds}[sidebarPageReference.toLowerCase()]
+    let sidebarObjects = sidebarPageReference === "home" ?  allAnimals : {mammals, reptiles, birds}[sidebarPageReference]
     
-    console.log(sidebarObjects)
+    const path = useLocation()
     return (
         <div className={styles.sidebar}>
             {sidebarObjects.map((animal, index) => (
-                <NavLink key={index} className={styles.link} to={`home/${animal.link}`}>{animal.name[0]}</NavLink>
+                <NavLink 
+                    key={index} 
+                    className={styles.link} 
+                    to={path.pathname === `/${sidebarPageReference}/${animal.link}` ? `${sidebarPageReference}` : `${sidebarPageReference}/${animal.link}`}>
+                    {animal.name[0]}
+                </NavLink>
             ))}
         </div>
     )

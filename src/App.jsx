@@ -1,11 +1,12 @@
-
 import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Layout from './pages/Layout'
-import Mammals from './pages/Mammals'
-import Birds from './pages/Birds'
-import Reptiles from './pages/Reptiles'
+import AnimalHome from './pages/AnimalHome'
+import AnimalType from './pages/AnimalType'
+import Animal from './pages/Animal'
+import WelcomeHome from './pages/WelcomeHome'
+import WelcomeAnimal from './pages/WelcomeAnimal'
 
 function App() {
   const [currentPage, setCurrentPage] = useState("home")
@@ -14,10 +15,14 @@ function App() {
     <>
       <Routes>
         <Route element={<Layout layoutCurrentPage={currentPage}/>}>
-          <Route path="/" element={<Home setPage={setCurrentPage}/>} />
-          <Route path="/mammals" element={<Mammals setPage={setCurrentPage}/>} />
-          <Route path="/birds" element={<Birds setPage={setCurrentPage}/>} />
-          <Route path="/reptiles" element={<Reptiles setPage={setCurrentPage}/>} />
+          <Route path="/" element={<Home setPage={setCurrentPage}/>}>
+            <Route index element={<WelcomeHome/>}/>
+            <Route path="/home/:animal" element={<AnimalHome/>}/>
+          </Route>
+          <Route path="/:animalType" element={<AnimalType setPage={setCurrentPage}/>}>
+            <Route index element={<WelcomeAnimal/>}/>
+            <Route path=":animal" element={<Animal/>}/>
+          </Route>
         </Route>
       </Routes>
     </>

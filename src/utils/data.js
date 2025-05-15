@@ -130,4 +130,4 @@ const allAnimals = [...mammals, ...reptiles, ...birds];
 
 export { allAnimals, birds, mammals, reptiles };
 
-export const pages = ["home", "mammals", "birds", "reptiles"]
+export const pages = [{link: "home"}, {link: "mammals"}, {link: "birds"}, {link: "reptiles"}]

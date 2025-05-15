@@ -1,15 +1,14 @@
 import { useEffect } from 'react'
 import styles from './home.module.css'
+import { Outlet, useParams } from 'react-router-dom'
 
 const Home = ({setPage}) => {
     useEffect(() => {
-        setPage("Home")
+        setPage("home")
     },[])
 
     return (
-        <>
-            <div>home</div>
-        </>
+        <Outlet/>
     )
 }
 

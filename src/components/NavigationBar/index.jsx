@@ -7,7 +7,12 @@ const NavigationBar = () => {
     return (
         <div className={styles.navBar}>
             {pages.map((item, index) => (
-                <NavLink key={index} className={styles.link} to={item === 'home' ? "/" : item}>{item}</NavLink>
+                <NavLink 
+                    key={index} 
+                    className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link} 
+                    to={item.link === 'home' ? "/" : item.link}>
+                    {item.link}    
+                </NavLink>
             ))}
         </div>
     )
