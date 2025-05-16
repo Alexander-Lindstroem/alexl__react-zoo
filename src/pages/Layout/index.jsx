@@ -12,7 +12,9 @@ const Layout = ({layoutCurrentPage}) => {
             <Header headerTitle={layoutCurrentPage}/>
             <div className={styles.main}>
                 <Sidebar sidebarPageReference={layoutCurrentPage}/>
+                <div className={styles.display}>
                 <Outlet/>
+                </div>
             </div>
             <Footer/>
         </>

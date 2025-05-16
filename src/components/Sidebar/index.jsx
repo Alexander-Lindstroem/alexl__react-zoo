@@ -11,8 +11,8 @@ const Sidebar = ({sidebarPageReference}) => {
             {sidebarObjects.map((animal, index) => (
                 <NavLink 
                     key={index} 
-                    className={styles.link} 
-                    to={path.pathname === `/${sidebarPageReference}/${animal.link}` ? `${sidebarPageReference}` : `${sidebarPageReference}/${animal.link}`}>
+                    className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link} 
+                    to={path.pathname === `/${sidebarPageReference}/${animal.link}` ? path.pathname.includes("home") ? "/" : `${sidebarPageReference}` : `${sidebarPageReference}/${animal.link}`}>
                     {animal.name[0]}
                 </NavLink>
             ))}
