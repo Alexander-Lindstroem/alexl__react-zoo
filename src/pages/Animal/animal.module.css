@@ -36,7 +36,7 @@
 }
 
 .description {
-    padding: 8px;
+    padding: 16px;
     font-size: 1.1rem
 }
 
@@ -44,4 +44,30 @@
     font-size: 1.4rem;
     text-align: center;
     margin: 12px;
+}
+
+@media screen and (min-width: 768px) {
+    .animal {
+        display: flex;
+    }
+
+    .imageContainer {
+        flex-basis: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .details {
+        flex-basis: 50%;
+    }
+    .name {
+        flex-grow: 1;
+        font-size: 3rem;
+    }
+    .nameContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+    }
 }
