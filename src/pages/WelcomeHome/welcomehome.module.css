@@ -1,0 +1,17 @@
+.welcome {
+    padding: 0;
+}
+
+.title {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.image {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.paragraph {
+    font-size: 1.2rem;
+}

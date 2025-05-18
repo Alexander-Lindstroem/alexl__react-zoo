@@ -19,8 +19,8 @@ function App() {
             <Route index element={<WelcomeHome/>}/>
             <Route path="/home/:animal" element={<AnimalHome/>}/>
           </Route>
-          <Route path="/:animalType" element={<AnimalType setPage={setCurrentPage}/>}>
-            <Route index element={<WelcomeAnimal/>}/>
+          <Route path=":animalType" element={<AnimalType setPage={setCurrentPage}/>}>
+            <Route index element={<WelcomeAnimal type={currentPage}/>}/>
             <Route path=":animal" element={<Animal/>}/>
           </Route>
         </Route>

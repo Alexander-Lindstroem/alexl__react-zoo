@@ -1,0 +1,10 @@
+.title {
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 2rem;
+}
+
+.paragraph {
+    text-align: center;
+    font-size: 1.2rem;
+}
